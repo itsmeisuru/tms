@@ -26,4 +26,9 @@ public class StudentApplicationAgent {
 		studentDataAgent.createStudent(new User());
 	}
 
+	public static void createStudent(User user) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
