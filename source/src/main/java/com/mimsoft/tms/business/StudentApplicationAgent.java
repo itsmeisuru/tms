@@ -6,19 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.mimsoft.tms.data.StudentDataAgent;
-import com.mimsoft.tms.entities.User;
+import com.mimsoft.tms.data.entities.User;
+;
 
 /**
  * This should call the data agent.
  */
 @Controller
-public class StudentBusinessAgent {
+public class StudentApplicationAgent {
 
 	@Autowired
 	StudentDataAgent studentDataAgent;
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(StudentBusinessAgent.class);
+			.getLogger(StudentApplicationAgent.class);
 
 	public void createStudent() {
 		// TODO user should come here as a parameter

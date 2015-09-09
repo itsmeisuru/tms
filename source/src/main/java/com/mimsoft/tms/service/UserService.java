@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mimsoft.tms.business.InstructorBusinessAgent;
 import com.mimsoft.tms.business.StudentBusinessAgent;
+import com.mimsoft.tms.core.UserFactory;
+import com.mimsoft.tms.data.entities.User;
+import com.mimsoft.tms.exception.TMSUserCreationException;
+import com.mimsoft.tms.util.UserType;
 
 /**
  * Handles requests for the application home page.
@@ -37,9 +41,18 @@ public class UserService {
 	public String createUser(Locale locale, Model model) {
 
 		// TODO if user == student
-		studentBusinessAgent.createStudent();
+		// TODO this should be student object after student is created.
+		try {
+			User student = UserFactory.createUser(UserType.STUDENT);
+			// TODO student should pass to the following method.
+			studentBusinessAgent.createStudent();
+		} catch (TMSUserCreationException e) {
+			// TODO return meaning full message.
+			e.printStackTrace();
+		}
 
 		// TODO if user == instructor
+		// TODO same as above should proceed.
 		instructorBusinessAgent.createInstructor();
 
 		return "home";

@@ -1,4 +1,4 @@
-package com.mimsoft.tms.entities;
+package com.mimsoft.tms.data.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

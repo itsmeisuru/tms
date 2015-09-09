@@ -2,8 +2,8 @@ package com.mimsoft.tms.data;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.mimsoft.tms.entities.User;
-import com.mimsoft.tms.repositories.UserRepository;
+import com.mimsoft.tms.data.entities.User;
+import com.mimsoft.tms.data.repositories.UserRepository;
 
 /**
  * This should call the db directly.
