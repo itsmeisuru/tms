@@ -10,8 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.mimsoft.tms.business.InstructorBusinessAgent;
-import com.mimsoft.tms.business.StudentBusinessAgent;
+import com.mimsoft.tms.application.StudentApplicationAgent;
 import com.mimsoft.tms.core.UserFactory;
 import com.mimsoft.tms.data.entities.User;
 import com.mimsoft.tms.exception.TMSUserCreationException;
@@ -26,13 +25,12 @@ import com.mimsoft.tms.util.UserType;
 public class UserService {
 
 	@Autowired
-	private StudentBusinessAgent studentBusinessAgent;
+	private StudentApplicationAgent studentBusinessAgent;
 
 	@Autowired
-	private InstructorBusinessAgent instructorBusinessAgent;
-
+	// private InstructorAAgent instructorBusinessAgent;
 	private static final Logger logger = LoggerFactory
-			.getLogger(UserService.class);
+	.getLogger(UserService.class);
 
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -53,7 +51,7 @@ public class UserService {
 
 		// TODO if user == instructor
 		// TODO same as above should proceed.
-		instructorBusinessAgent.createInstructor();
+		// instructorBusinessAgent.createInstructor();
 
 		return "home";
 	}
